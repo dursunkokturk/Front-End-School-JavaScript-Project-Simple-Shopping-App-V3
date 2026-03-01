@@ -1,0 +1,22 @@
+const products = [
+  "elma", 
+  "armut", 
+  "muz", 
+  "çilek", 
+  "üzüm",
+  "portakal", 
+  "karpuz", 
+  "kavun", 
+  "kiraz", 
+  "şeftali",
+  "havuç", 
+  "domates", 
+  "salatalık", 
+  "biber", 
+  "patlıcan",
+  "ıspanak", 
+  "brokoli", 
+  "soğan", 
+  "sarımsak", 
+  "patates"
+];
