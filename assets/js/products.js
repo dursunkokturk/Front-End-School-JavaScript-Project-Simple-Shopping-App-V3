@@ -1,5 +1,4 @@
 const products = [
-  // 🍎 MEYVELER
   {
     name: "Elma",
     type: "meyve",
@@ -31,7 +30,7 @@ const products = [
     name: "Portakal",
     type: "meyve",
     color: "turuncu",
-    colorcalories: 47,
+    calories: 47,
     season: "kış",
     vitamins: ["C", "A"],
     isSweet: true
@@ -40,7 +39,7 @@ const products = [
     name: "Üzüm",
     type: "meyve",
     color: "mor/yeşil",
-    colorcalories: 69,
+    calories: 69,
     season: "yaz",
     vitamins: ["C", "K", "B6"],
     isSweet: true
@@ -49,7 +48,7 @@ const products = [
     name: "Karpuz",
     type: "meyve",
     color: "yeşil/kırmızı",
-    colorcalories: 30,
+    calories: 30,
     season: "yaz",
     vitamins: ["C", "A"],
     isSweet: true
@@ -58,7 +57,7 @@ const products = [
     name: "Armut",
     type: "meyve",
     color: "sarı/yeşil",
-    colorcalories: 57,
+    calories: 57,
     season: "sonbahar",
     vitamins: ["C", "K"],
     isSweet: true
@@ -67,7 +66,7 @@ const products = [
     name: "Kiraz",
     type: "meyve",
     color: "kırmızı",
-    colorcalories: 50,
+    calories: 50,
     season: "yaz",
     vitamins: ["C", "A"],
     isSweet: true
@@ -76,7 +75,7 @@ const products = [
     name: "Şeftali",
     type: "meyve",
     color: "turuncu/sarı",
-    colorcalories: 39,
+    calories: 39,
     season: "yaz",
     vitamins: ["C", "A", "E"],
     isSweet: true
@@ -85,18 +84,17 @@ const products = [
     name: "Limon",
     type: "meyve",
     color: "sarı",
-    colorcalories: 29,
+    calories: 29,
     season: "kış",
     vitamins: ["C", "B6"],
     isSweet: false
   },
 
-  // 🥦 SEBZELER
   {
     name: "Havuç",
     type: "sebze",
     color: "turuncu",
-    colorcalories: 41,
+    calories: 41,
     season: "sonbahar",
     vitamins: ["A", "K", "B6"],
     isSweet: false
@@ -105,7 +103,7 @@ const products = [
     name: "Domates",
     type: "sebze",
     color: "kırmızı",
-    colorcalories: 18,
+    calories: 18,
     season: "yaz",
     vitamins: ["C", "K", "A"],
     isSweet: false
@@ -114,7 +112,7 @@ const products = [
     name: "Brokoli",
     type: "sebze",
     color: "yeşil",
-    colorcalories: 34,
+    calories: 34,
     season: "kış",
     vitamins: ["C", "K", "A"],
     isSweet: false
@@ -123,7 +121,7 @@ const products = [
     name: "Salatalık",
     type: "sebze",
     color: "yeşil",
-    colorcalories: 16,
+    calories: 16,
     season: "yaz",
     vitamins: ["K", "C"],
     isSweet: false
@@ -132,7 +130,7 @@ const products = [
     name: "Biber",
     type: "sebze",
     color: "kırmızı/yeşil/sarı",
-    colorcalories: 31,
+    calories: 31,
     season: "yaz",
     vitamins: ["C", "A", "B6"],
     isSweet: false
@@ -141,7 +139,7 @@ const products = [
     name: "Patlıcan",
     type: "sebze",
     color: "mor",
-    colorcalories: 25,
+    calories: 25,
     season: "yaz",
     vitamins: ["B6", "K"],
     isSweet: false
@@ -150,7 +148,7 @@ const products = [
     name: "Ispanak",
     type: "sebze",
     color: "yeşil",
-    colorcalories: 23,
+    calories: 23,
     season: "ilkbahar",
     vitamins: ["K", "A", "C"],
     isSweet: false
@@ -159,7 +157,7 @@ const products = [
     name: "Patates",
     type: "sebze",
     color: "sarı/kahverengi",
-    colorcalories: 77,
+    calories: 77,
     season: "sonbahar",
     vitamins: ["C", "B6"],
     isSweet: false
@@ -168,7 +166,7 @@ const products = [
     name: "Soğan",
     type: "sebze",
     color: "beyaz/mor",
-    colorcalories: 40,
+    calories: 40,
     season: "yaz",
     vitamins: ["C", "B6"],
     isSweet: false
@@ -177,9 +175,28 @@ const products = [
     name: "Kabak",
     type: "sebze",
     color: "yeşil/sarı",
-    colorcalories: 17,
+    calories: 17,
     season: "yaz",
     vitamins: ["C", "A", "K"],
     isSweet: false
   }
 ];
+
+console.log("Tüm Sebze ve Meyveler");
+for (let i=0;i<products.length;i++){
+  console.log(`Ürün Adı : ${products[i].name} Ürün Türü : ${products[i].type} Ürün Rengi : ${products[i].color} Ürün Kalarisi : ${products[i].calories} Ürün Sezonu : ${products[i].season} Ürün Vitamin Türü : ${products[i].vitamins} Ürün Tatlı Mı : ${products[i].isSweet}`);
+}
+
+console.log("Tüm Sebzeler");
+for (let i=0;i<products.length;i++){
+  if(products[i].type === "sebze"){
+    console.log(`Ürün Adı : ${products[i].name} Ürün Türü : ${products[i].type} Ürün Rengi : ${products[i].color} Ürün Kalarisi : ${products[i].calories} Ürün Sezonu : ${products[i].season} Ürün Vitamin Türü : ${products[i].vitamins} Ürün Tatlı Mı : ${products[i].isSweet}`);
+  }
+}
+
+console.log("Tüm Meyveler");
+for (let i=0;i<products.length;i++){
+  if(products[i].type === "meyve"){
+    console.log(`Ürün Adı : ${products[i].name} Ürün Türü : ${products[i].type} Ürün Rengi : ${products[i].color} Ürün Kalarisi : ${products[i].calories} Ürün Sezonu : ${products[i].season} Ürün Vitamin Türü : ${products[i].vitamins} Ürün Tatlı Mı : ${products[i].isSweet}`);
+  }
+}
