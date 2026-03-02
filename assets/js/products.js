@@ -222,13 +222,21 @@ if (userProducts) {
   // products Array Icinde Yapilan Aranan Var Ise
   if (productIndex !== -1) {
 
-    // Bulunan Sonucu Sepete Ekliyoruz
-    userBasket.push(products[productIndex]);
+    if(products[productIndex].stock !== -1){
 
-    // Products Array Icinden Siliyoruz
-    products.splice(productIndex, 1);
+      // Bulunan Sonucu Sepete Ekliyoruz
+      userBasket.push(products[productIndex]);
+      
+      // Products Array Icinden Siliyoruz
+      products.splice(productIndex, 1);
+      
+      console.log("Ürün Sepete Eklendi!");
 
-    console.log("Ürün Sepete Eklendi!");
+      if(products[productIndex].stock === 0){
+
+      }
+  
+    }
 
   } else {
     console.log("Ürün Bulunamadı!");
