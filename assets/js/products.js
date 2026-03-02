@@ -190,6 +190,7 @@ for (const product of products) {
       <td>${product.producer}</td>
       <td>${product.purchasePrice}</td>
       <td>${product.salePrice}</td>
+      <td>${product.stock}</td>
     </tr>
     `;
 }
