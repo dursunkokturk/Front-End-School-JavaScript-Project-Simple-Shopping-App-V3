@@ -3,278 +3,229 @@ const products = [
     name: "Elma",
     type: "meyve",
     color: "kırmızı/yeşil",
-    calories: 52,
-    season: "sonbahar",
-    vitamins: ["C", "B6"],
-    isSweet: true
+    producer: "Ege Tarım",
+    purchasePrice: 8,
+    salePrice: 12,
   },
   {
     name: "Muz",
     type: "meyve",
     color: "sarı",
-    calories: 89,
-    season: "yaz",
-    vitamins: ["B6", "C"],
-    isSweet: true
+    producer: "Tropikal Meyve Ltd.",
+    purchasePrice: 15,
+    salePrice: 22,
   },
   {
     name: "Çilek",
     type: "meyve",
     color: "kırmızı",
-    calories: 32,
-    season: "ilkbahar",
-    vitamins: ["C", "K"],
-    isSweet: true
+    producer: "Akdeniz Çiftliği",
+    purchasePrice: 18,
+    salePrice: 26,
   },
   {
     name: "Portakal",
     type: "meyve",
     color: "turuncu",
-    calories: 47,
-    season: "kış",
-    vitamins: ["C", "A"],
-    isSweet: true
+    producer: "Finike Tarım",
+    purchasePrice: 7,
+    salePrice: 11,
   },
   {
     name: "Üzüm",
     type: "meyve",
     color: "mor/yeşil",
-    calories: 69,
-    season: "yaz",
-    vitamins: ["C", "K", "B6"],
-    isSweet: true
+    producer: "Manisa Bağları",
+    purchasePrice: 14,
+    salePrice: 20,
   },
   {
     name: "Karpuz",
     type: "meyve",
     color: "yeşil/kırmızı",
-    calories: 30,
-    season: "yaz",
-    vitamins: ["C", "A"],
-    isSweet: true
+    producer: "Adana Tarım",
+    purchasePrice: 5,
+    salePrice: 9,
   },
   {
     name: "Armut",
     type: "meyve",
     color: "sarı/yeşil",
-    calories: 57,
-    season: "sonbahar",
-    vitamins: ["C", "K"],
-    isSweet: true
+    producer: "Bursa Meyvecilik",
+    purchasePrice: 9,
+    salePrice: 14,
   },
   {
     name: "Kiraz",
     type: "meyve",
     color: "kırmızı",
-    calories: 50,
-    season: "yaz",
-    vitamins: ["C", "A"],
+    producer: "Isparta Bahçeleri",
+    purchasePrice: 20,
+    salePrice: 30,
     isSweet: true
   },
   {
     name: "Şeftali",
     type: "meyve",
     color: "turuncu/sarı",
-    calories: 39,
-    season: "yaz",
-    vitamins: ["C", "A", "E"],
-    isSweet: true
+    producer: "Mersin Tarım",
+    purchasePrice: 13,
+    salePrice: 19,
   },
   {
     name: "Limon",
     type: "meyve",
     color: "sarı",
-    calories: 29,
-    season: "kış",
-    vitamins: ["C", "B6"],
-    isSweet: false
+    producer: "Antalya Narenciye",
+    purchasePrice: 6,
+    salePrice: 10,
   },
 
   {
     name: "Havuç",
     type: "sebze",
     color: "turuncu",
-    calories: 41,
-    season: "sonbahar",
-    vitamins: ["A", "K", "B6"],
-    isSweet: false
+    producer: "Konya Tarım",
+    purchasePrice: 4,
+    salePrice: 7,
   },
   {
     name: "Domates",
     type: "sebze",
     color: "kırmızı",
-    calories: 18,
-    season: "yaz",
-    vitamins: ["C", "K", "A"],
-    isSweet: false
+    producer: "Çanakkale Tarım",
+    purchasePrice: 6,
+    salePrice: 10,
   },
   {
     name: "Brokoli",
     type: "sebze",
     color: "yeşil",
-    calories: 34,
-    season: "kış",
-    vitamins: ["C", "K", "A"],
-    isSweet: false
+    producer: "Karadeniz Organik",
+    purchasePrice: 10,
+    salePrice: 16,
   },
   {
     name: "Salatalık",
     type: "sebze",
     color: "yeşil",
-    calories: 16,
-    season: "yaz",
-    vitamins: ["K", "C"],
-    isSweet: false
+    producer: "Sera Üretim AŞ",
+    purchasePrice: 5,
+    salePrice: 8,
   },
   {
     name: "Biber",
     type: "sebze",
     color: "kırmızı/yeşil/sarı",
-    calories: 31,
-    season: "yaz",
-    vitamins: ["C", "A", "B6"],
-    isSweet: false
+    producer: "Ege Sera",
+    purchasePrice: 8,
+    salePrice: 13,
   },
   {
     name: "Patlıcan",
     type: "sebze",
     color: "mor",
-    calories: 25,
-    season: "yaz",
-    vitamins: ["B6", "K"],
-    isSweet: false
+    producer: "Hatay Tarım",
+    purchasePrice: 7,
+    salePrice: 12,
   },
   {
     name: "Ispanak",
     type: "sebze",
     color: "yeşil",
-    calories: 23,
-    season: "ilkbahar",
-    vitamins: ["K", "A", "C"],
-    isSweet: false
+    producer: "Trakya Organik",
+    purchasePrice: 6,
+    salePrice: 9,
   },
   {
     name: "Patates",
     type: "sebze",
     color: "sarı/kahverengi",
-    calories: 77,
-    season: "sonbahar",
-    vitamins: ["C", "B6"],
-    isSweet: false
+    producer: "Niğde Çiftliği",
+    purchasePrice: 5,
+    salePrice: 8,
   },
   {
     name: "Soğan",
     type: "sebze",
     color: "beyaz/mor",
-    calories: 40,
-    season: "yaz",
-    vitamins: ["C", "B6"],
-    isSweet: false
+    producer: "Amasya Tarım",
+    purchasePrice: 4,
+    salePrice: 7,
   },
   {
     name: "Kabak",
     type: "sebze",
     color: "yeşil/sarı",
-    calories: 17,
-    season: "yaz",
-    vitamins: ["C", "A", "K"],
-    isSweet: false
+    producer: "Antalya Sera",
+    purchasePrice: 5,
+    salePrice: 9,
   }
 ];
-
-console.log("Tüm Sebze ve Meyveler");
-for (let i = 0; i < products.length; i++) {
-  console.log(`Ürün Adı : ${products[i].name} Ürün Türü : ${products[i].type} Ürün Rengi : ${products[i].color} Ürün Kalarisi : ${products[i].calories} Ürün Sezonu : ${products[i].season} Ürün Vitamin Türü : ${products[i].vitamins} Ürün Tatlı Mı : ${products[i].isSweet}`);
-}
-
-/*
-console.log("Tüm Sebzeler");
-for (let i = 0; i < products.length; i++) {
-  if (products[i].type === "sebze") {
-    console.log(`Ürün Adı : ${products[i].name} Ürün Türü : ${products[i].type} Ürün Rengi : ${products[i].color} Ürün Kalarisi : ${products[i].calories} Ürün Sezonu : ${products[i].season} Ürün Vitamin Türü : ${products[i].vitamins} Ürün Tatlı Mı : ${products[i].isSweet}`);
-  }
-}
-*/
-
-/*
-console.log("Tüm Meyveler");
-for (let i = 0; i < products.length; i++) {
-  if (products[i].type === "meyve") {
-    console.log(`Ürün Adı : ${products[i].name} Ürün Türü : ${products[i].type} Ürün Rengi : ${products[i].color} Ürün Kalarisi : ${products[i].calories} Ürün Sezonu : ${products[i].season} Ürün Vitamin Türü : ${products[i].vitamins} Ürün Tatlı Mı : ${products[i].isSweet}`);
-  }
-}
-*/
 
 for (const product of products) {
   allVegetablesAndFruits.innerHTML += `
     <tr>
       <td>${product.name}</td>
       <td>${product.type}</td>
-      <td>${product.color}</td>
-      <td>${product.calories}</td>
-      <td>${product.season}</td>
-      <td>${product.vitamins}</td>
-      <td>${product.isSweet ? "Evet" : "Hayır"}</td>
+      <td>${product.producer}</td>
+      <td>${product.purchasePrice}</td>
+      <td>${product.salePrice}</td>
     </tr>
     `;
 }
 
-/*
-for (const product of products) {
-  if (product.type === "sebze") {
-    allVegetables.innerHTML += `
-      <tr>
-        <td>${product.name}</td>
-        <td>${product.type}</td>
-        <td>${product.color}</td>
-        <td>${product.calories}</td>
-        <td>${product.season}</td>
-        <td>${product.vitamins}</td>
-        <td>${product.isSweet ? "Evet" : "Hayır"}</td>
-      </tr>
-      `;
-  }
+console.log("Tüm Sebze ve Meyveler");
+for (let i = 0; i < products.length; i++) {
+  console.log(`Ürün Adı : ${products[i].name}`);
 }
-*/
-
-/*
-for (const product of products) {
-  if (product.type === "meyve") {
-    allFruits.innerHTML += `
-      <tr>
-        <td>${product.name}</td>
-        <td>${product.type}</td>
-        <td>${product.color}</td>
-        <td>${product.calories}</td>
-        <td>${product.season}</td>
-        <td>${product.vitamins}</td>
-        <td>${product.isSweet ? "Evet" : "Hayır"}</td>
-      </tr>
-      `;
-  }
-}
-*/
 
 let userBasket = [];
 
 let userProducts = prompt("Eklemek İstediğiniz Ürünleri Giriniz");
 
 if (userProducts) {
-  let found = false;
+
+  // Arama Islemi Bittiginde Bulunan Sonuclara index Numarasi Vermek Gerekiyor
+  // Baslangic Degeri Olarak Urun Yok Durumunu Veriyoruz 
+  let productIndex = -1;
 
   for (let i = 0; i < products.length; i++) {
     if (products[i].name.toLowerCase() === userProducts.toLowerCase()) {
-      userBasket.push(products[i]);
-      products.splice(i, 1);
 
-      found = true;
+      // Arama Isleminden Sonra Bulunan Data'lar Icin Index Numarasi Veriyoruz
+      productIndex = i;
       break;
     }
   }
-  if (found) {
-    console.log("Ürün sepete eklendi.");
-    console.log("Sepetiniz:", userBasket);
+
+  // products Array Icinde Yapilan Aranan Var Ise
+  if (productIndex !== -1) {
+
+    // Bulunan Sonucu Sepete Ekliyoruz
+    userBasket.push(products[productIndex]);
+
+    // Products Array Icinden Siliyoruz
+    products.splice(productIndex, 1);
+
+    console.log("Ürün Sepete Eklendi!");
+
   } else {
-    console.log("Ürün bulunamadı!");
+    console.log("Ürün Bulunamadı!");
   }
+}
+
+
+console.log("Tüm Sebze ve Meyveler Güncel Liste");
+if (products.length === 0) {
+  console.log("Sebze ve Meyveler Genel Liste Boş.");
+} else {
+  for (let i = 0; i < products.length; i++) {
+    console.log(`Ürün Adı : ${products[i].name}`);
+  }
+}
+
+console.log("Sepetteki Sebze ve Meyveler");
+for (let i = 0; i < userBasket.length; i++) {
+  console.log(`Ürün Adı : ${userBasket[i].name}`);
 }
