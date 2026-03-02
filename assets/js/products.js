@@ -202,7 +202,7 @@ for (let i = 0; i < products.length; i++) {
 }
 
 for (const product of products) {
-  allVegtablesAndFruits.innerHTML += `
+  allVegetablesAndFruits.innerHTML += `
     <tr>
       <td>${product.name}</td>
       <td>${product.type}</td>
@@ -213,4 +213,36 @@ for (const product of products) {
       <td>${product.isSweet ? "Evet":"Hayır"}</td>
     </tr>
     `;
+}
+
+for (const product of products) {
+  if(product.type === "sebze"){
+    allVegetables.innerHTML += `
+      <tr>
+        <td>${product.name}</td>
+        <td>${product.type}</td>
+        <td>${product.color}</td>
+        <td>${product.calories}</td>
+        <td>${product.season}</td>
+        <td>${product.vitamins}</td>
+        <td>${product.isSweet ? "Evet":"Hayır"}</td>
+      </tr>
+      `;
+  }
+}
+
+for (const product of products) {
+  if(product.type === "meyve"){
+    allFruits.innerHTML += `
+      <tr>
+        <td>${product.name}</td>
+        <td>${product.type}</td>
+        <td>${product.color}</td>
+        <td>${product.calories}</td>
+        <td>${product.season}</td>
+        <td>${product.vitamins}</td>
+        <td>${product.isSweet ? "Evet":"Hayır"}</td>
+      </tr>
+      `;
+  }
 }
