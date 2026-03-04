@@ -6,7 +6,6 @@ const products = [
     producer: "Ege Tarım",
     purchasePrice: 8,
     salePrice: 12,
-    stock: 120
   },
   {
     name: "Muz",
@@ -15,7 +14,6 @@ const products = [
     producer: "Tropikal Meyve Ltd.",
     purchasePrice: 15,
     salePrice: 22,
-    stock: 85
   },
   {
     name: "Çilek",
@@ -24,7 +22,6 @@ const products = [
     producer: "Akdeniz Çiftliği",
     purchasePrice: 18,
     salePrice: 26,
-    stock: 60
   },
   {
     name: "Portakal",
@@ -33,7 +30,6 @@ const products = [
     producer: "Finike Tarım",
     purchasePrice: 7,
     salePrice: 11,
-    stock: 150
   },
   {
     name: "Üzüm",
@@ -42,7 +38,6 @@ const products = [
     producer: "Manisa Bağları",
     purchasePrice: 14,
     salePrice: 20,
-    stock: 90
   },
   {
     name: "Karpuz",
@@ -51,7 +46,6 @@ const products = [
     producer: "Adana Tarım",
     purchasePrice: 5,
     salePrice: 9,
-    stock: 200
   },
   {
     name: "Armut",
@@ -60,7 +54,6 @@ const products = [
     producer: "Bursa Meyvecilik",
     purchasePrice: 9,
     salePrice: 14,
-    stock: 75
   },
   {
     name: "Kiraz",
@@ -69,7 +62,6 @@ const products = [
     producer: "Isparta Bahçeleri",
     purchasePrice: 20,
     salePrice: 30,
-    stock: 40
   },
   {
     name: "Şeftali",
@@ -78,7 +70,6 @@ const products = [
     producer: "Mersin Tarım",
     purchasePrice: 13,
     salePrice: 19,
-    stock: 95
   },
   {
     name: "Limon",
@@ -87,7 +78,6 @@ const products = [
     producer: "Antalya Narenciye",
     purchasePrice: 6,
     salePrice: 10,
-    stock: 180
   },
 
   {
@@ -97,7 +87,6 @@ const products = [
     producer: "Konya Tarım",
     purchasePrice: 4,
     salePrice: 7,
-    stock: 140
   },
   {
     name: "Domates",
@@ -106,7 +95,6 @@ const products = [
     producer: "Çanakkale Tarım",
     purchasePrice: 6,
     salePrice: 10,
-    stock: 160
   },
   {
     name: "Brokoli",
@@ -115,7 +103,6 @@ const products = [
     producer: "Karadeniz Organik",
     purchasePrice: 10,
     salePrice: 16,
-    stock: 55
   },
   {
     name: "Salatalık",
@@ -124,7 +111,6 @@ const products = [
     producer: "Sera Üretim AŞ",
     purchasePrice: 5,
     salePrice: 8,
-    stock: 130
   },
   {
     name: "Biber",
@@ -133,7 +119,6 @@ const products = [
     producer: "Ege Sera",
     purchasePrice: 8,
     salePrice: 13,
-    stock: 110
   },
   {
     name: "Patlıcan",
@@ -142,7 +127,6 @@ const products = [
     producer: "Hatay Tarım",
     purchasePrice: 7,
     salePrice: 12,
-    stock: 100
   },
   {
     name: "Ispanak",
@@ -151,7 +135,6 @@ const products = [
     producer: "Trakya Organik",
     purchasePrice: 6,
     salePrice: 9,
-    stock: 125
   },
   {
     name: "Patates",
@@ -160,7 +143,6 @@ const products = [
     producer: "Niğde Çiftliği",
     purchasePrice: 5,
     salePrice: 8,
-    stock: 300
   },
   {
     name: "Soğan",
@@ -169,7 +151,6 @@ const products = [
     producer: "Amasya Tarım",
     purchasePrice: 4,
     salePrice: 7,
-    stock: 280
   },
   {
     name: "Kabak",
@@ -178,6 +159,68 @@ const products = [
     producer: "Antalya Sera",
     purchasePrice: 5,
     salePrice: 9,
+  }
+];
+
+const productStock = [
+  {
+    stock: 120
+  },
+  { 
+    stock: 85 
+  },
+  { 
+    stock: 60 
+  },
+  { 
+    stock: 150 
+  },
+  { 
+    stock: 90 
+  },
+  {
+    stock: 200
+  },
+  {
+    stock: 75
+  },
+  {
+    stock: 40
+  },
+  {
+    stock: 95
+  },
+  {
+    stock: 180
+  },
+  {
+    stock: 140
+  },
+  {
+    stock: 160
+  },
+  {
+    stock: 55
+  },
+  {
+    stock: 130
+  },
+  {
+    stock: 110
+  },
+  {
+    stock: 100
+  },
+  {
+    stock: 125
+  },
+  {
+    stock: 300
+  },
+  {
+    stock: 280
+  },
+  {
     stock: 115
   }
 ];
@@ -223,7 +266,7 @@ if (userProducts) {
   // products Array Icinde Yapilan Aranan Var Ise
   if (productIndex !== -1) {
 
-    if (products[productIndex].stock > 0) {
+    if (products[productIndex].productStock[i] > 0) {
 
       // Bulunan Sonucu Sepete Ekliyoruz
       userBasket.push(products[productIndex]);
@@ -233,7 +276,7 @@ if (userProducts) {
       products[productIndex].stock--;
 
       console.log("Ürün Sepete Eklendi!");
-    } else if (products[productIndex].stock === 0) {
+    } else if (products[productIndex].productStock[i] === 0) {
       console.log("Ürün Stokta Yok");
     }
   } else {
