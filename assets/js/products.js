@@ -219,25 +219,23 @@ if (userProducts) {
     }
   }
 
+  let stock;
   // products Array Icinde Yapilan Aranan Var Ise
   if (productIndex !== -1) {
 
-    if(products[productIndex].stock !== -1){
+    if (products[productIndex].stock > 0) {
 
       // Bulunan Sonucu Sepete Ekliyoruz
       userBasket.push(products[productIndex]);
-      
-      // Products Array Icinden Siliyoruz
-      products.splice(productIndex, 1);
-      
+
+      // Kullanici Urunu Sepete Ekledikten Sonra 
+      // Products Array Icinden Stock Datasini Azaltiyoruz
+      products[productIndex].stock--;
+
       console.log("Ürün Sepete Eklendi!");
-
-      if(products[productIndex].stock === 0){
-
-      }
-  
+    } else if (products[productIndex].stock === 0) {
+      console.log("Ürün Stokta Yok");
     }
-
   } else {
     console.log("Ürün Bulunamadı!");
   }
