@@ -309,5 +309,11 @@ for (let i = 0; i < userBasket.length; i++) {
   const originalIndex = products.indexOf(userBasket[i]);
 
   // userBasket Array Icindeki Urunlerin index Numarasi Uzerinden Guncel Stok Verisini Aliyoruz
-  console.log(`Ürün Adı : ${userBasket[i].name} Kalan Stok : ${productStock[originalIndex].stock}`);
+  console.log(`Ürün Adı : ${userBasket[i].name} Ürün Satış Fiyatı : ${userBasket[i].salePrice} Kalan Stok : ${productStock[originalIndex].stock}`);
+  
+  let totalPrice = 0 ;
+  for (let i=0;i<userBasket.length;i++){
+    totalPrice += userBasket[i].salePrice;
+    console.log(`Toplam Fiyat : ${totalPrice}`)
+  }
 }
