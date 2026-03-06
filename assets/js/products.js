@@ -238,6 +238,19 @@ for (let i = 0; i < products.length; i++) {
     `;
 }
 
+for (let i = 0; i < userBasket.length; i++) {
+  allUserBasket.innerHTML += `
+    <tr>
+      <td>${products[i].name}</td>
+      <td>${products[i].type}</td>
+      <td>${products[i].producer}</td>
+      <td>${products[i].purchasePrice}</td>
+      <td>${products[i].salePrice}</td>
+      <td>${productStock[i].stock > 0 ? productStock[i].stock : "Tükendi"}</td>
+    </tr>
+    `;
+}
+
 console.log("Tüm Sebze ve Meyveler");
 for (let i = 0; i < products.length; i++) {
   console.log(`Ürün Adı : ${products[i].name} Ürün Stok : ${productStock[i].stock}`);
@@ -245,7 +258,7 @@ for (let i = 0; i < products.length; i++) {
 
 let userBasket = [];
 
-let userProducts = prompt("Eklemek İstediğiniz Ürünleri Giriniz");
+// let userProducts = prompt("Eklemek İstediğiniz Ürünleri Giriniz");
 
 if (userProducts) {
 
