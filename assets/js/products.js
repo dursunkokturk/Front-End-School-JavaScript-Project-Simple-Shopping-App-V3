@@ -233,7 +233,7 @@ for (let i = 0; i < products.length; i++) {
       <td>${products[i].producer}</td>
       <td>${products[i].purchasePrice}</td>
       <td>${products[i].salePrice}</td>
-      <td>${productStock[i].stock}</td>
+      <td>${productStock[i].stock > 0 ? productStock[i].stock : "Tükendi"}</td>
     </tr>
     `;
 }
@@ -280,7 +280,7 @@ if (userProducts) {
 
       // Products Array Icindeki Urunun index Numarasi Uzerinden 
       // productStock Array Icinde Stock Sayisini Kontrol Ediyoruz
-    } else if (products[productIndex].stock === 0) {
+    } else if (productStock[productIndex].stock === 0) {
       console.log(`${products[productIndex].name} Stokta Yok Sepete Eklenemez`);
     }
   } else {
@@ -310,10 +310,10 @@ for (let i = 0; i < userBasket.length; i++) {
 
   // userBasket Array Icindeki Urunlerin index Numarasi Uzerinden Guncel Stok Verisini Aliyoruz
   console.log(`Ürün Adı : ${userBasket[i].name} Ürün Satış Fiyatı : ${userBasket[i].salePrice} Kalan Stok : ${productStock[originalIndex].stock}`);
-  
-  let totalPrice = 0 ;
-  for (let i=0;i<userBasket.length;i++){
+
+  let totalPrice = 0;
+  for (let i = 0; i < userBasket.length; i++) {
     totalPrice += userBasket[i].salePrice;
-    console.log(`Toplam Fiyat : ${totalPrice}`)
   }
+  console.log(`Toplam Fiyat : ${totalPrice}`)
 }
