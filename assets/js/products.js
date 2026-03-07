@@ -225,49 +225,70 @@ const productStock = [
   }
 ];
 
-for (let i = 0; i < products.length; i++) {
-  allVegetablesAndFruits.innerHTML += `
-    <tr>
-      <td>${products[i].name}</td>
-      <td>${products[i].type}</td>
-      <td>${products[i].producer}</td>
-      <td>${products[i].purchasePrice}</td>
-      <td>${products[i].salePrice}</td>
-      <td>${productStock[i].stock > 0 ? productStock[i].stock : "Tükendi"}</td>
-    </tr>
-    `;
-}
-
-for (let i = 0; i < userBasket.length; i++) {
-  allUserBasket.innerHTML += `
-    <tr>
-      <td>${products[i].name}</td>
-      <td>${products[i].type}</td>
-      <td>${products[i].producer}</td>
-      <td>${products[i].purchasePrice}</td>
-      <td>${products[i].salePrice}</td>
-      <td>${productStock[i].stock > 0 ? productStock[i].stock : "Tükendi"}</td>
-    </tr>
-    `;
-}
-
-console.log("Tüm Sebze ve Meyveler");
-for (let i = 0; i < products.length; i++) {
-  console.log(`Ürün Adı : ${products[i].name} Ürün Stok : ${productStock[i].stock}`);
-}
-
 let userBasket = [];
 
-// let userProducts = prompt("Eklemek İstediğiniz Ürünleri Giriniz");
+function renderProductTable() {
 
-if (userProducts) {
+  allVegetablesAndFruits.innerHTML = "";
+
+  for (let i = 0; i < products.length; i++) {
+    allVegetablesAndFruits.innerHTML += `
+      <tr>
+        <td>${products[i].name}</td>
+        <td>${products[i].type}</td>
+        <td>${products[i].producer}</td>
+        <td>${products[i].purchasePrice}</td>
+        <td>${products[i].salePrice}</td>
+        <td>${productStock[i].stock > 0 ? productStock[i].stock : "Tükendi"}</td>
+      </tr>
+      `;
+  }
+}
+
+function renderBasket() {
+
+  allUserBasket.innerHTML = "";
+
+  for (let i = 0; i < userBasket.length; i++) {
+
+    // userBasket Array Icindeki Urunlerin index Numarasini Buluyoruz
+    const originalIndex = products.indexOf(userBasket[i]);
+
+    allUserBasket.innerHTML += `
+      <tr>
+        <td>${userBasket[i].name}</td>
+        <td>${userBasket[i].type}</td>
+        <td>${userBasket[i].producer}</td>
+        <td>${userBasket[i].purchasePrice}</td>
+        <td>${userBasket[i].salePrice}</td>
+        <td>${productStock[originalIndex].stock > 0 ? productStock[originalIndex].stock : "Tükendi"}</td>
+      </tr>
+      `;
+  }
+
+  let totalPrice = 0;
+  console.log("Sepetteki Sebze ve Meyveler");
+  for (let i = 0; i < userBasket.length; i++) {
+    totalPrice += userBasket[i].salePrice;
+  }
+  document.getElementById("totalPrice").innerHTML =
+    userBasket.length > 0 ? `Toplam Tutar: ${totalPrice} ₺` : "";
+}
+
+productAdd.addEventListener("click", function () {
+  const userInputValue = userInput.value.trim();
+
+  if (!userInputValue) {
+    alert("Lütfen bir ürün adı giriniz.");
+    return;
+  }
 
   // Arama Islemi Bittiginde Bulunan Sonuclara index Numarasi Vermek Gerekiyor
   // Baslangic Degeri Olarak Urun Yok Durumunu Veriyoruz 
   let productIndex = -1;
 
   for (let i = 0; i < products.length; i++) {
-    if (products[i].name.toLowerCase() === userProducts.toLowerCase()) {
+    if (products[i].name.toLowerCase() === userInputValue.toLowerCase()) {
 
       // Arama Isleminden Sonra Bulunan Data'lar Icin Index Numarasi Veriyoruz
       productIndex = i;
@@ -291,6 +312,9 @@ if (userProducts) {
 
       console.log(`${products[productIndex].name} Ürün Sepete Eklendi!`);
 
+      renderProductTable();
+      renderBasket();
+
       // Products Array Icindeki Urunun index Numarasi Uzerinden 
       // productStock Array Icinde Stock Sayisini Kontrol Ediyoruz
     } else if (productStock[productIndex].stock === 0) {
@@ -299,34 +323,7 @@ if (userProducts) {
   } else {
     console.log("Ürün Bulunamadı!");
   }
-}
+  userInput.value = "";
 
-// for (let i = 0; i < products.length; i++) {
-//   console.log(products[i].name);
-// }
-
-
-console.log("Tüm Sebze ve Meyveler Güncel Liste");
-if (products.length === 0) {
-  console.log("Sebze ve Meyveler Genel Liste Boş.");
-} else {
-  for (let i = 0; i < products.length; i++) {
-    console.log(`Ürün Adı : ${products[i].name} Ürün Stok : ${productStock[i].stock}`);
-  }
-}
-
-console.log("Sepetteki Sebze ve Meyveler");
-for (let i = 0; i < userBasket.length; i++) {
-
-  // userBasket Array Icindeki Urunlerin index Numarasini Buluyoruz
-  const originalIndex = products.indexOf(userBasket[i]);
-
-  // userBasket Array Icindeki Urunlerin index Numarasi Uzerinden Guncel Stok Verisini Aliyoruz
-  console.log(`Ürün Adı : ${userBasket[i].name} Ürün Satış Fiyatı : ${userBasket[i].salePrice} Kalan Stok : ${productStock[originalIndex].stock}`);
-
-  let totalPrice = 0;
-  for (let i = 0; i < userBasket.length; i++) {
-    totalPrice += userBasket[i].salePrice;
-  }
-  console.log(`Toplam Fiyat : ${totalPrice}`)
-}
+})
+renderProductTable();
